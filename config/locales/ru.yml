@@ -1,0 +1,21 @@
+ru:
+  activerecord:
+    attributes: 
+      order:
+        mobile: "Мобильный телефон"
+        name: "Имя"
+        comment: "Комментарий"
+    errors:
+      models:
+        order: 
+          attributes: 
+            name: 
+              blank: "не может быть пустым"
+            mobile:
+              blank: "не может быть пустым"
+              not_a_number: "должен содержать только цифры"
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"
+
+               

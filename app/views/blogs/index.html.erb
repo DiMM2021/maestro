@@ -1,0 +1,33 @@
+<div class="items"> 
+	<div class="container">
+		<h2 class="head_h2">Музыкальные автомобили</h2>
+		<hr>
+		<% if @blogs.count > 0 %>
+			<div class="music">
+				<div class="container muz_auto">
+					<div class="ql-editor">
+						<div class="row justify-content-center">
+							<% @blogs.each do |blog| %>
+								<div class="col-8">
+									<div class="card mb-3">
+										<div class="card-img-top">
+												<% if blog.image.present? %>
+													<%= image_tag blog.image, class: 'img_blog' %>
+												<% end %>
+												<div class="card-body">
+												<h5 class="card-title"><%= blog.title %></h5>
+												<div class="d-flex justify-content-center"><%= link_to 'Подробнее', blog_path(blog), class: 'btn btn-outline-danger' %></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% else %>
+        	<div class="our_work">Скоро здесь появятся наши работы</div>
+        <% end %>
+	</div>
+</div>

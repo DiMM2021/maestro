@@ -1,0 +1,16 @@
+.muz_auto {
+    display: flex;
+    justify-content: center;
+}
+
+.img_blog {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.our_work {
+    display: flex;
+    justify-content: center;
+    color:$red-400;
+}

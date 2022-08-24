@@ -1,0 +1,79 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "font-awesome";
+@import "home"; 
+@import "items"; 
+@import "music_auto"; 
+@import "contact"; 
+@import "login"; 
+@import "cart"; 
+
+.car img{
+    display: inline-block;
+    margin: 0 auto;
+    width: 550px;
+    @media (max-width: 768px) {
+        width: 400px;
+    }
+    @media (max-width: 375px) {
+        width: 350px;
+    @media (max-width: 320px) {
+        width: 300px;
+    }
+    }
+}
+
+img.img_muz {
+    height: 200px;
+    object-fit: cover;
+}
+
+img.img_muz_big {
+    width: 100%;
+    object-fit: cover;
+}
+
+img.img_item {
+    width: 100%;
+    object-fit: cover;
+    padding: 15px;
+}
+
+h5.card-title {
+    display: flex;
+    justify-content: center;
+}
+
+h5.card-title-big {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: rgb(255, 0, 0);
+}
+
+.card-safe img {
+    width: 100%;
+    padding: 15px;
+}
+
+.music {
+    min-height: calc(100vh - 150px);
+}
+
+.accordion-button {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 15px;
+}
+
+.notice, #notice {
+    background: #ffb;
+    border-radius: 0.5em;
+    border: solid 0.177em #882;
+    color: #882;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1em 1.414em;
+    text-align: center;
+}

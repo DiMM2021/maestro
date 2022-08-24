@@ -1,0 +1,11 @@
+
+<div class="items">
+    <div class="container">
+        <% @items.take(1).each  do |item|  %> 
+            <h2 class="head_h2"><%= item.category.title %></h2>
+        <% end %> 
+        <hr>
+
+        <%= render 'forms/item' %>
+    </div>
+</div>

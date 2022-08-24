@@ -1,0 +1,49 @@
+<div class="items">
+  <div class="cart">
+    <div class="container">
+      <h2 class="head_h2">Ваша корзина</h2>
+      <hr>
+      <% if @cart.line_items.count > 0 %>
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-md-12 col-12">
+            <% @cart.line_items.find_each do |item| %>
+              <div class="cart_text">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-2 col-md-3 align-self-center">
+                      <%= item.item.name %>
+                    </div>
+                    <div class="col-2 col-md-2 align-self-center">
+                      <%= item.item.price %> тенге
+                    </div>
+                    <div class="col-2 col-md-1 align-self-center">
+                      <%= button_to "+", line_item_add_path(item), method: :post, class:"btn btn-success" %>
+                    </div>
+                    <div class="col-1 align-self-center">
+                      <%= item.quantity %>
+                    </div>
+                    <div class="col-2 col-md-1 align-self-center">
+                      <%= button_to "-", line_item_reduce_path(item), method: :post, class:"btn btn-danger" %>
+                    </div>
+                    <div class="col-2 col-md-2 align-self-center">
+                      <%= button_to "X", line_item_path(item), method: :delete, class:"btn btn-danger" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            <% end %>
+          <h3>Сумма: <%= @cart.sub_total %> тенге </h3>
+          <div class="button_cart">
+          <%= link_to "Заказать", new_order_path(@order), class:"btn btn-success" %>
+          <%= button_to "Очистить корзину", cart_path(@current_cart), method: :delete, class:"btn btn-danger" %>
+          </div>
+        </div>
+        <% else %>
+          <div class="our_work">Ваша корзина пуста</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

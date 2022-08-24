@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MaestroSt</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> Меню
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to 'Главная', root_path, class: 'nav-link active' %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Магазин
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% Category.order(:title).each do |category| %>
+                <li><%= link_to category.title, items_path(category: category.id), class: "dropdown-item" %></li>
+                <% end %>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Наши работы', blogs_path, class: 'nav-link active' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Контакты', contacts_path, class: 'nav-link active' %>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <%= link_to 'Корзина', cart_path(@current_cart), class: 'nav-link active' %>
+            </li>
+            <%= render 'search/form' %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <%= render 'include/notifications' %>
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-3 align-self-center">
+          <div class="header-logo">
+            <%= link_to(image_tag("logo.png", size: "150х150")) %>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-6 align-self-center">
+          <div class="header-descr">
+            <h1>Интернет-магазин качественного, душевного автозвука в Алматы</h1>
+          </div>
+        </div>
+      </div>
+          <hr>
+    </div>
+
+
+    <%= yield %>
+
+    <footer>
+      <div class="footer">
+            <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-3 text-center align-self-center">
+            <div class="address">
+              <div>Республика Казахстан,<br>г.Алматы</div>
+            </div>
+          </div>
+          <div class="col-sm-3 text-center align-self-center">
+            <div class="mini_logo">
+              <%= link_to(image_tag("logo.png", size: "100х100")) %>
+            </div>
+          </div>
+          <div class="col-sm-3 text-center align-self-center">
+            <div class="icons">
+              <div><a href="https://wa.me/77772627007"><i class="fa-brands fa-whatsapp"></i> 87772627007</a></div>
+              <div><a href="https://www.instagram.com/maestro.sq/"><i class="fa-brands fa-instagram"></i> maestro.sq</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>

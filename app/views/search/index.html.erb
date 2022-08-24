@@ -1,0 +1,11 @@
+<div class="items"> 
+  <div class="container">
+    <h2 class="head_h2">Результат поиска</h2>
+		<hr>
+		<% if @items.count > 0 %>
+			<%= render 'forms/item' %>
+		<% else %>
+      		<div class="our_work">По вашему запросу ничего не найдено</div>
+    	<% end %>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="items"> 
+  <div class="container">
+    <div class="product">
+      <div class="row">
+        <% @items.each do |item|  %> 
+          <div class="col-sm-6 col-lg-4 col-xl-4">
+            <div class="column">
+              <div class="card" style="width: 18rem; height: 24rem; padding-left: 0px;padding-right: 0px;">
+                <% if item.image.present? %>
+                  <%= image_tag item.image, class: 'img_product' %>
+                <% end %>
+                <div class="card-body">
+                  <h4 class= "card-title"><%= item.name %></h4>
+                  <p class= "text_price">
+                    <p class= "price"><b>Цена: <%= item.price %> тенге</b></p>
+                  </p>
+                  <div class="button-box">
+                    <%= link_to 'Подробнее', item_path(item), class: 'btn btn-outline-danger btn-sm' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

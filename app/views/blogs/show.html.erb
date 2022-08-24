@@ -1,0 +1,17 @@
+<div class="hr-line"></div>
+<div class="music">
+<div class="container muz_auto">
+	<div class="ql-editor">
+		<% if @blog.image.present? %>
+			<%= image_tag @blog.image, class: 'img_muz_big' %>
+		<% end %>
+		<div>
+			<h5 class="card-title-big"><%= @blog.title %></h5>
+			<div class="card-safe"><%= @blog.description.html_safe %></div>
+		</div>
+	</div>
+	</div>
+</div>
+ 
+
+ 

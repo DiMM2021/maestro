@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: dev
+  password: 1234
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: maestro_st_development
+
+test:
+  <<: *default
+  database: maestro_st_test
+
+production:
+  <<: *default
+  database: maestro_st_production
+  username: maestro_st
+  password: <%= ENV["MAESTRO_ST_DATABASE_PASSWORD"] %>

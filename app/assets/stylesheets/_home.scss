@@ -1,0 +1,95 @@
+.header-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.header-descr  {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    text-align: right;
+    color: $red-600;
+    @media (max-width: 576px) {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+.nota {
+    min-height: 250px;
+    padding: 50px 15px;
+    @media (max-width: 576px) {
+        padding: 15px 15px;
+    }
+}
+
+.nota_descr {
+    padding-top: 15px;
+}
+
+.into_nav {
+   margin-top: 30px;
+   margin-bottom: 5px;
+}
+
+.reasons {
+    min-height: 650px;
+    padding-top: 40px;
+}
+
+.reasons_head {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.final {
+    min-height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 768px) {
+        min-height: 300px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+	background-color: $dark;
+    @media (max-width: 576px) {
+        height: 300px;
+    }
+}
+
+.address {
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+}
+
+.icons {
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.mini_logo {
+    @media (max-width: 576px) {
+       padding: 15px 0px;
+    }
+}
+
+.border_hr{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
