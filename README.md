@@ -1,24 +1,13 @@
-# README
+# Maestro-Studio 
+## интернет-магазин и мини-блог
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Этот сайт разработан для товаров по автозвуку.
 
-Things you may want to cover:
+Что использовалось:
 
-* Ruby version
+* Ruby version 3.1.2
 
-* System dependencies
+* Database PostgresQL 1.1
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
